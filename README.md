@@ -2,7 +2,7 @@
 
 TSLPatcher is a legacy Delphi 7 Windows desktop application for applying mod-driven changes to Star Wars: Knights of the Old Republic and The Sith Lords game data. It reads patch instructions from INI files and updates game assets such as 2DA tables, TLK dialog strings, GFF resources, ERF/RIM archives, and SSF soundsets.
 
-This repository is source-first. The workspace currently includes compiled artifacts such as `TSLPatcher.exe` and `.dcu` files, but the active build entrypoint is `TSLPatcher.dpr`.
+Yes, this is the **authentic** source code Stoffe was working with 10-20 some years ago.
 
 ## What The App Does
 
