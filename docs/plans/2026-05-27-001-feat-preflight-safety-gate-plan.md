@@ -1,11 +1,11 @@
 ---
 title: Preflight Safety Gate For Installer Runs
 type: feat
-status: active
+status: completed
 date: 2026-05-27
 ---
 
-# Preflight Safety Gate For Installer Runs
+## Preflight Safety Gate For Installer Runs
 
 ## Summary
 
@@ -223,7 +223,7 @@ Current installer validation is distributed across runtime mutation paths, and `
 ## Risks & Dependencies
 
 | Risk | Mitigation |
-|------|------------|
+| ------ | ------------ |
 | Forcing `Execute('dialog.tlk', fileTlk)` earlier changes user-visible timing of folder prompts or status updates | Keep the call installer-only, reuse current callback/log surfaces, and validate both registry and manual folder-selection flows |
 | Preflight introduces hidden side effects before mutation | Limit the helper to the existing `fileTlk` validation branch, which exits before override-folder creation and file copying |
 | Early-abort logging becomes inconsistent with current install logs | Verify log persistence in `UMainForm.pas` on preflight failure and add only minimal clarifying log strings if needed |
@@ -234,6 +234,12 @@ Current installer validation is distributed across runtime mutation paths, and `
 
 - Capture this slice as the repository’s first explicit manual validation recipe under `docs/manual-validation/`.
 - If implementation succeeds, add a short repo learning later describing why the `dialog.tlk` preflight seam was chosen instead of touching serializer code first.
+
+## Completion Delta
+
+- Fully landed: `TTSLPatcher.RunPatchOperation` now runs an installer-only preflight helper before mutation, reusing `TPatchFileHandler.Execute('dialog.tlk', fileTlk)` for install-path and `Required` validation while adding preflight-specific log/UI wording.
+- Partially validated or uncertain: source inspection confirms the reused `fileTlk` branch exits before override-folder creation, but this Linux workspace did not provide a Delphi 7 compile or end-to-end installer run.
+- Recommended next steps changed: validate the four target scenarios in `docs/manual-validation/preflight-safety-gate.md`; no additional code follow-up is planned unless manual runtime checks expose regression.
 
 ---
 

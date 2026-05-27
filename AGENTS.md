@@ -60,3 +60,8 @@
 - For behavior changes, include a short note in comments near touched logic if intent is non-obvious.
 - Keep changes narrowly scoped and avoid unrelated formatting churn.
 - If you add new operational docs, link them from this file rather than duplicating details.
+
+## Supporting Docs
+
+- `BUILDING.md`: source-backed build, launch, runtime-data, and VS Code workflow details.
+- `ARCHITECTURE.md`: source-backed unit map, runtime sequence, handler boundaries, and historical-file notes.

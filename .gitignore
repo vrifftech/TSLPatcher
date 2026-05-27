@@ -126,6 +126,8 @@ bin-release/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/omnipascal-stubs/
+!.vscode/omnipascal-stubs/XPMan.pas
 !*.code-workspace
 
 # Repo-specific UI/resource assets that should not enter source history

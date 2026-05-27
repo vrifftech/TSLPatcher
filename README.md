@@ -90,3 +90,5 @@ Use the narrowest practical manual check:
 
 - See `CONTRIBUTING.md` for prerequisites, change workflow, and validation expectations.
 - See `CONVENTIONS.md` for code organization, Delphi 7 compatibility rules, and high-risk areas.
+- See `BUILDING.md` for exact build, launch, runtime-data, and VS Code workflow details.
+- See `ARCHITECTURE.md` for the active unit map, runtime sequence, handler layers, and historical-file boundaries.

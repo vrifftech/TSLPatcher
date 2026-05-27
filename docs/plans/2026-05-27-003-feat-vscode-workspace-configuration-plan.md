@@ -1,7 +1,7 @@
 ---
 title: VS Code Workspace Configuration
 type: feat
-status: active
+status: completed
 date: 2026-05-27
 ---
 
