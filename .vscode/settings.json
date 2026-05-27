@@ -1,0 +1,43 @@
+{
+    "files.associations": {
+        "*.dpr": "pascal",
+        "*.dpk": "pascal",
+        "*.inc": "pascal",
+        "*.dfm": "pascal",
+        "*.dof": "ini",
+        "*.cfg": "ini",
+        "*.ddp": "plaintext"
+    },
+    "files.exclude": {
+        "**/*.dcu": true,
+        "**/__history": true,
+        "**/__recovery": true,
+        "**/*.~*": true
+    },
+    "search.exclude": {
+        "**/*.dcu": true,
+        "**/*.exe": true,
+        "**/__history": true,
+        "**/__recovery": true,
+        "**/*.~*": true
+    },
+    "files.watcherExclude": {
+        "**/*.dcu": true,
+        "**/__history/**": true,
+        "**/__recovery/**": true
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "TSLPatcher.dpr": "TSLPatcher.dof, TSLPatcher.cfg, TSLPatcher.res, tslpatcher.ico",
+        "UMainForm.pas": "UMainForm.dfm, UMainForm.ddp",
+        "UNamespaceForm.pas": "UNamespaceForm.dfm, UNamespaceForm.ddp"
+    },
+    "terminal.integrated.automationProfile.windows": {
+        "path": "cmd.exe",
+        "args": [
+            "/d",
+            "/c"
+        ]
+    }
+}

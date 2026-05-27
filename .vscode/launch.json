@@ -1,0 +1,124 @@
+{
+    // These launch entries target the built Windows executable.
+    // They assume a Windows host with the VS Code C/C++ debugger available.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TSLPatcher: Launch built executable",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\${input:tslpExecutable}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "preLaunchTask": "TSLPatcher: Validate default launch surface",
+            "presentation": {
+                "group": "TSLPatcher",
+                "order": 1
+            },
+            "linux": {
+                "presentation": {
+                    "hidden": true
+                }
+            },
+            "osx": {
+                "presentation": {
+                    "hidden": true
+                }
+            }
+        },
+        {
+            "name": "TSLPatcher: Launch with CLI overrides",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\${input:tslpExecutable}",
+            "args": [
+                "${input:overrideIni}",
+                "${input:overrideInfo}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "preLaunchTask": "TSLPatcher: Validate repo surface",
+            "presentation": {
+                "group": "TSLPatcher",
+                "order": 2
+            },
+            "linux": {
+                "presentation": {
+                    "hidden": true
+                }
+            },
+            "osx": {
+                "presentation": {
+                    "hidden": true
+                }
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "TSLPatcher: Build then launch default flow",
+            "configurations": [
+                "TSLPatcher: Launch built executable"
+            ],
+            "preLaunchTask": "${defaultBuildTask}",
+            "stopAll": true,
+            "presentation": {
+                "group": "TSLPatcher",
+                "order": 3
+            },
+            "linux": {
+                "presentation": {
+                    "hidden": true
+                }
+            },
+            "osx": {
+                "presentation": {
+                    "hidden": true
+                }
+            }
+        },
+        {
+            "name": "TSLPatcher: Build then launch with overrides",
+            "configurations": [
+                "TSLPatcher: Launch with CLI overrides"
+            ],
+            "preLaunchTask": "${defaultBuildTask}",
+            "stopAll": true,
+            "presentation": {
+                "group": "TSLPatcher",
+                "order": 4
+            },
+            "linux": {
+                "presentation": {
+                    "hidden": true
+                }
+            },
+            "osx": {
+                "presentation": {
+                    "hidden": true
+                }
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "tslpExecutable",
+            "type": "promptString",
+            "description": "Path to the built TSLPatcher executable, relative to the workspace root on Windows",
+            "default": "TSLPatcher.exe"
+        },
+        {
+            "id": "overrideIni",
+            "type": "promptString",
+            "description": "INI file path to pass as argument 1 to TSLPatcher.exe",
+            "default": "changes.ini"
+        },
+        {
+            "id": "overrideInfo",
+            "type": "promptString",
+            "description": "RTF file path to pass as argument 2 to TSLPatcher.exe",
+            "default": "info.rtf"
+        }
+    ]
+}
