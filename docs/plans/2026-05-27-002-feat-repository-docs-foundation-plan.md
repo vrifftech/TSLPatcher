@@ -5,7 +5,7 @@ status: completed
 date: 2026-05-27
 ---
 
-# Repository Documentation Foundation
+## Repository Documentation Foundation
 
 ## Summary
 
@@ -287,7 +287,7 @@ The repository currently exposes core project knowledge only through source file
 ## Risks & Dependencies
 
 | Risk | Mitigation |
-|------|------------|
+| ------ | ------------ |
 | Documentation invents workflow details not supported by the repo | Keep source-backed evidence as the only authority and omit or caveat unknowns |
 | README becomes a duplicate of `AGENTS.md` instead of a public-facing maintainer overview | Use README for orientation and link to deeper docs instead of copying full guidance blocks |
 | Cross-doc terminology drifts across README, CONTRIBUTING, and CONVENTIONS | Use one evidence pass first, then validate shared terms and links in a dedicated checklist |
